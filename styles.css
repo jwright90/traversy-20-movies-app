@@ -1,0 +1,19 @@
+html, body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#seats-container {
+  display: grid;
+  grid-template-columns: repeat(8, 110px);
+  grid-template-rows: repeat(6, 110px);
+}
+
+.seat {
+  height: 100px;
+  width: 100px;
+  background-color: grey;
+}
