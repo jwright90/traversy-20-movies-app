@@ -20,7 +20,7 @@ seatsObjArr.forEach(seat => {
   const seatDiv = document.createElement('div');
   seatDiv.classList.add('seat');
   seatDiv.classList.add(`row-${seat.row}`);
-  seatDiv.classList.add(`row-${seat.col}`);
+  seatDiv.classList.add(`col-${seat.col}`);
 
   seatsContainer.appendChild(seatDiv);
 });
