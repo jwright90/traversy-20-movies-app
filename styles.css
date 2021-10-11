@@ -1,19 +1,41 @@
+:root {
+/* Colors */
+  --dark-blue: #20212C;
+  --seat-neutral: #3D3B47;
+  --seat-selected: #63E5F3;
+  --seat-booked: #fff;
+
+/* Seats */
+  --seat-width: 30px;
+  --seat-height: calc(var(--seat-width)*0.8);
+  --grid-seat-width: calc(var(--seat-width)*1.2);
+  --grid-seat-width-end: calc(var(--seat-width)*1.8);
+}
+
 html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: var(--dark-blue);
 }
 
 #seats-container {
   display: grid;
-  grid-template-columns: repeat(8, 110px);
-  grid-template-rows: repeat(6, 110px);
+  grid-template-columns: 
+  var(--grid-seat-width)
+  var(--grid-seat-width-end)
+  repeat(3, var(--grid-seat-width))
+  var(--grid-seat-width-end)
+  repeat(2, var(--grid-seat-width));
+  
+  grid-template-rows: repeat(6, var(--grid-seat-width));
 }
 
 .seat {
-  height: 100px;
-  width: 100px;
-  background-color: grey;
+  height: var(--seat-height);
+  width: var(--seat-width);
+  background-color: var(--seat-neutral);
+  border-radius: calc(var(--seat-width)*2) calc(var(--seat-width)*2) 0 0;
 }
