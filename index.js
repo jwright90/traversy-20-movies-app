@@ -24,3 +24,12 @@ seatsObjArr.forEach(seat => {
 
   seatsContainer.appendChild(seatDiv);
 });
+
+
+const toggleSelected = e => e.target.classList.toggle('selected');
+
+let seats = Array.from(document.getElementsByClassName('seat'));
+
+for (seat of seats) {
+  seat.addEventListener('click', toggleSelected)
+}
