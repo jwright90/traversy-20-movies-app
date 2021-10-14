@@ -1,70 +1,91 @@
 :root {
-/* Colors */
-  --dark-blue: #20212C;
-  --seat-neutral: #3D3B47;
-  --seat-selected: #63E5F3;
-  --seat-booked: #fff;
+	/* Colors */
+	--dark-blue: #20212c;
+	--seat-neutral: #3d3b47;
+	--seat-selected: #63e5f3;
+	--seat-booked: #fff;
 
-/* Seats */
-  --seat-width: 30px;
-  --seat-height: calc(var(--seat-width)*0.8);
-  --grid-seat-width: calc(var(--seat-width)*1.2);
-  --grid-seat-end-width: calc(var(--grid-seat-width)*1.8);
+	/* Seats */
+	--seat-width: 30px;
+	--seat-height: calc(var(--seat-width) * 0.8);
+	--grid-seat-width: calc(var(--seat-width) * 1.2);
+	--grid-seat-end-width: calc(var(--grid-seat-width) * 1.8);
 }
 
+html,
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: var(--dark-blue);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: #fff;
+}
 
-html, body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: var(--dark-blue);
+.movie-selection-container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	text-align: left;
+	justify-content: left;
+	align-items: baseline;
+	margin-bottom: 40px;
+}
+
+label {
+	margin-right: 15px;
+}
+
+select {
+	min-width: 120px;
 }
 
 #bookBtn {
-  color: var(--dark-blue);
-  background-color: #fff;
-  border: none;
-  margin-top: 40px;
-  padding: 20px 0px;
-  width: 100%;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 1.1px;
+	color: var(--dark-blue);
+	background-color: #fff;
+	border: none;
+	margin-top: 40px;
+	padding: 20px 0px;
+	width: 100%;
+	border-radius: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 1.1px;
 }
 
 #bookBtn:focus {
-  outline: none;
+	outline: none;
 }
 
 #seats-container {
-  display: grid;
-  grid-template-columns: 
-  var(--grid-seat-width)
-  var(--grid-seat-end-width)
-  repeat(3, var(--grid-seat-width))
-  var(--grid-seat-end-width) 
-  repeat(2, var(--grid-seat-width));
-  grid-template-rows: repeat(6, var(--grid-seat-width));
+	display: grid;
+	grid-template-columns:
+		var(--grid-seat-width)
+		var(--grid-seat-end-width)
+		repeat(3, var(--grid-seat-width))
+		var(--grid-seat-end-width)
+		repeat(2, var(--grid-seat-width));
+	grid-template-rows: repeat(6, var(--grid-seat-width));
 }
 
 .seat {
-  background-color: var(--seat-neutral);
-  width: var(--seat-width);
-  height: var(--seat-height);
-  transition: background-color 0.5s ease-out;
-  border-radius: 100px 100px 0 0;
+	background-color: var(--seat-neutral);
+	width: var(--seat-width);
+	height: var(--seat-height);
+	transition: background-color 0.5s ease-out;
+	border-radius: 100px 100px 0 0;
 }
 
 .seat.selected {
-  background-color: var(--seat-selected);
-  transition: background-color 0.3s;
+	background-color: var(--seat-selected);
+	transition: background-color 0.3s;
 }
 
 /* The booked class should stay after selected class,
-otherwise when you hover over booked it will change color */
+otherwise when you click booked it will change color 
+even after the seat has been booked */
 .seat.booked {
-  background-color: var(--seat-booked);
+	background-color: var(--seat-booked);
 }

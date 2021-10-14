@@ -8,13 +8,25 @@
   <title>Arrays</title>
 </head>
 <body>
-  <div id="seats-container">
+
+  <div class="container">
+
+    <div class="movie-selection-container">
+      <label for="movie-select">Select a movie:</label>
+      <select name="movie-select" id="movie-select">
+        <option value="Joker">Joker</option>
+        <option value="Deadpool-3">Deadpool-3</option>
+      </select>
+    </div>
+    
+    <div id="seats-container">
+    </div>
+
+    <button id="bookBtn">
+      Book Seats
+    </button>
 
   </div>
-
-  <button id="bookBtn">
-    Book Seats
-  </button>
   <script src="index.js"></script>
 </body>
 </html>
