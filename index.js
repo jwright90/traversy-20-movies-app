@@ -1,93 +1,45 @@
-/* To Dos
-*/
+import { filterSeatsObjArr } from './modulesSeats/filterSeats.js';
 
-const seatsContainer = document.getElementById('seats-container');
+export const seatsContainer = document.getElementById('seats-container');
+export const seats = seatsContainer.children;
+export const movieSelectionDropdown = document.getElementById('movie-select');
 
-class Movie {
-  constructor(title, price) {
-    this.title = title;
-    this.price = price;
-  }
-}
+movieSelectionDropdown.addEventListener('change', loadSeats)
 
-const movies = [
-  joker = new Movie('Joker', 12.00),
-  deadpool = new Movie('Deadpool 3', 15.00)
-]
+export function loadSeats() {
+  // Get which movie is currently selected from dropdown
+  const selectedMovieIndex = movieSelectionDropdown.selectedIndex;
 
-class Seat {
-  constructor(row, col, booked, movie) {
-    this.row = row;
-    this.col = col;
-    this.booked = booked;
-    this.movie = movie;
-  }
-}
+  // Get booked seats from local storage
+  const bookedSeatsArr = JSON.parse(localStorage.getItem(`bookedSeats-${selectedMovieIndex}`));
 
-// Create seats array
-seatsObjArr = [];
-
-for (let h = 0; h < movies.length; h++) {
-  for (let i = 0; i < 6; i++) {
-    for (let j = 0; j < 8; j++) {
-      seatsObjArr.push(new Seat(i, j, false, movies[h].title.replace(" ", "-")));
-    }
-  }
-}
-
-movieSelection = document.getElementById('movie-select');
-
-const filterSeatsObjArr = (movie) => {
-  movie = movieSelection.value;
-  return (seatsObjArr.filter(seat => (seat.movie === movie)));
-}
-
-function loadSeats() {
-  let filteredSeatsObjArr = filterSeatsObjArr();
+  // Remove previoulsy selected movie seats when a new movie is selected
   seatsContainer.innerHTML = '';
 
-  filteredSeatsObjArr.forEach(seat => {
+  // Filter seat objects by the movie that has been selected and then loop through them
+  filterSeatsObjArr().forEach((seat, index) => {
+
+    // For each seat object create a div and add relevant classes
     const seatDiv = document.createElement('div');
     seatDiv.classList.add('seat');
     seatDiv.classList.add(`row-${seat.row}`);
     seatDiv.classList.add(`col-${seat.col}`);
     seatDiv.classList.add(`movie-${seat.movie}`);
-    if (seat.booked) {
+
+    // Check to see if there are any booked seats in local storage
+    if (bookedSeatsArr == null) {
+      seatDiv.classList.add('unbooked');
+
+    // If seat index matches index in local storage then add class of booked
+    } else if (bookedSeatsArr.indexOf(index)  > -1) {
       seatDiv.classList.add('booked');
+    // Otherwise add class of unbooked
     } else {
       seatDiv.classList.add('unbooked');
     }
+    // Append each seat as a child within the seats container
     seatsContainer.appendChild(seatDiv);
   });
-
-  // Click highlight as selected
-  const toggleSelected = e => e.target.classList.toggle('selected');
-
-  let seats = Array.from(document.getElementsByClassName('seat'));
-
-  for (seat of seats) {
-    seat.addEventListener('click', toggleSelected);
-  }
-
-  // Book seats
-  btn = document.getElementById('bookBtn');
-
-  const bookSeats = () => {
-    seats.forEach(seat => {
-      if (seat.classList.contains('selected')) {
-        seat.classList.add('booked');
-        seat.classList.remove('selected');
-      }
-    });
-  }
-
-  btn.addEventListener('click', bookSeats);
-}
+};
 
 loadSeats();
-
-movieSelection.addEventListener('change', loadSeats);
-
-
-
-
