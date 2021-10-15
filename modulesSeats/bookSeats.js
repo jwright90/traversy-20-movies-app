@@ -1,5 +1,6 @@
 import { loadSeats, seats } from "../index.js";
 import { updateBookedSeats } from './updateBookedSeats.js'
+import { updateBookingsTable } from "../modules/Backend/bookingsTable.js";
 
 const bookBtn = document.getElementById('bookBtn');
 
@@ -22,4 +23,7 @@ const bookSeats = () => {
 
 }
 
-bookBtn.addEventListener('click', bookSeats);
+bookBtn.addEventListener('click', () => {
+  bookSeats()
+  updateBookingsTable()
+});

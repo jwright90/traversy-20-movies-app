@@ -1,6 +1,9 @@
+@import url('./bookings-backend.css');
+
 :root {
 	/* Colors */
 	--dark-blue: #20212c;
+	--dark-blue-80: #333547;
 	--seat-neutral: #3d3b47;
 	--seat-selected: #63e5f3;
 	--seat-booked: #fff;
@@ -12,20 +15,35 @@
 	--grid-seat-end-width: calc(var(--grid-seat-width) * 1.8);
 }
 
-html,
-body {
+* {
+	box-sizing: border-box;
+}
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bookings-container {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
+}
+
+.bookings-frontend {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 	background-color: var(--dark-blue);
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	color: #fff;
+	min-height: 100vh;
+	width: 50%;
 }
 
 .movie-selection-container {
-	width: 100%;
 	display: flex;
 	flex-direction: row;
 	text-align: left;
@@ -48,7 +66,7 @@ select {
 	border: none;
 	margin-top: 40px;
 	padding: 20px 0px;
-	width: 100%;
+	width: calc(var(--grid-seat-width) * 9.6);
 	border-radius: 10px;
 	font-size: 16px;
 	font-weight: bold;

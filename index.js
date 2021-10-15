@@ -1,9 +1,10 @@
 import { filterSeatsObjArr } from './modulesSeats/filterSeats.js';
+import './modulesMovies/moviesDropdown.js';
 import './modulesSeats/bookSeats.js';
+import './modules/Backend/bookingsTable.js';
 
 export const seatsContainer = document.getElementById('seats-container');
 export const seats = seatsContainer.children;
-
 export const movieSelectionDropdown = document.getElementById('movie-select');
 
 movieSelectionDropdown.addEventListener('change', loadSeats)
