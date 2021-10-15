@@ -1,12 +1,14 @@
 import { filterSeatsObjArr } from './modulesSeats/filterSeats.js';
+import './modulesSeats/bookSeats.js';
 
 export const seatsContainer = document.getElementById('seats-container');
 export const seats = seatsContainer.children;
+
 export const movieSelectionDropdown = document.getElementById('movie-select');
 
 movieSelectionDropdown.addEventListener('change', loadSeats)
 
-export function loadSeats() {
+function loadSeats() {
   // Get which movie is currently selected from dropdown
   const selectedMovieIndex = movieSelectionDropdown.selectedIndex;
 
@@ -43,3 +45,5 @@ export function loadSeats() {
 };
 
 loadSeats();
+
+export { loadSeats }

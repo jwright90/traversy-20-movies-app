@@ -3,7 +3,7 @@ import { updateBookedSeats } from './updateBookedSeats.js'
 
 const bookBtn = document.getElementById('bookBtn');
 
-export const bookSeats = () => {
+const bookSeats = () => {
   // Get array from HTML collection of seats
   [...seats].forEach(seat => {
 
@@ -19,6 +19,7 @@ export const bookSeats = () => {
 
   // Re-render newly booked seats to DOM
   loadSeats();
+
 }
 
 bookBtn.addEventListener('click', bookSeats);
