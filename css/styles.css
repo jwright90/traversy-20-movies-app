@@ -26,6 +26,15 @@ html {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+button {
+	box-shadow: 0 5px #e3e3e3;
+}
+
+button:active {
+	transform: translateY(2px);
+	box-shadow: 0 2px #e3e3e3;
+}
+
 .bookings-container {
 	display: flex;
 	align-items: center;

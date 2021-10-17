@@ -13,7 +13,7 @@ export const updateBookingsTable = () => {
     bookingsTableBody.innerHTML += `<tr>
                                       <td>${movie.title}</td>
                                       <td>${movie.price}</td>
-                                      <td>${bookings !== null ? bookings.length : 0}</td>
+                                      <td>${bookings !== null ? bookings.length : 0} / 48</td>
                                     </tr>`
   })
 

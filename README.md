@@ -3,6 +3,10 @@
 My take on Brad Traversy's movies app on Udemy \
 https://www.udemy.com/course/web-projects-with-vanilla-javascript/
 
+## Lessons learned
+
+- Developing full CRUD applications from scratch takes a lot of time
+
 ## To dos
 
 ### 17th Oct 2021
