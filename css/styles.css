@@ -30,9 +30,16 @@ html {
 	display: flex;
 	align-items: center;
 	min-height: 100vh;
+	position: relative;
+}
+
+.bookings-info {
+	margin-bottom: 55px;
 }
 
 .bookings-frontend {
+	position: absolute;
+	left: 50%;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -41,6 +48,11 @@ html {
 	color: #fff;
 	min-height: 100vh;
 	width: 50%;
+}
+
+.seats-section {
+	position: absolute;
+	bottom: 25%;
 }
 
 .movie-selection-container {

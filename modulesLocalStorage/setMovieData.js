@@ -1,6 +1,6 @@
-function setMovieData(movieIndex, seatsIndex) {
-  localStorage.setItem(`selectedMovie-${movieIndex}`, movieIndex);
-  localStorage.setItem(`bookedSeats-${movieIndex}`, JSON.stringify(seatsIndex));
+function setMovieData(movieName, movieIndex, seatsIndex) {
+  localStorage.setItem(`selectedMovie-${movieName}`, movieIndex);
+  localStorage.setItem(`bookedSeats-${movieName}`, JSON.stringify(seatsIndex));
 }
 
 export {setMovieData}

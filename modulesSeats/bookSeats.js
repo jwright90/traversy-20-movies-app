@@ -20,7 +20,6 @@ const bookSeats = () => {
 
   // Re-render newly booked seats to DOM
   loadSeats();
-
 }
 
 bookBtn.addEventListener('click', () => {

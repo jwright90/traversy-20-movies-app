@@ -8,7 +8,8 @@ const updateBookedSeats = () => {
     ));
     
     const movieIndex = movieSelectionDropdown.selectedIndex;
-    setMovieData(movieIndex, seatsIndex);
+    const movieName = movieSelectionDropdown.value;
+    setMovieData(movieName, movieIndex, seatsIndex);
 }
 
 export { updateBookedSeats }

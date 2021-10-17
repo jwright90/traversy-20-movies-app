@@ -10,28 +10,43 @@
 <body>
 
   <div class="bookings-container">
-
     <section class="bookings-backend">
-      <h2>Bookings Backend</h2>
-      <table id="bookings-table">
-        <thead>
-          <tr>
-            <th>Movie</th>
-            <th>Price (£)</th>
-            <th>No. Bookings</th>
-          </tr>
-        </thead>
-        <tbody id="bookings-table-body">
+      <div class="bookings-backend-container">
+        <div class="bookings-info">
+        <h2>Bookings</h2>
+        <table id="bookings-table">
+          <thead>
+            <tr>
+              <th>Movie</th>
+              <th>Price (£)</th>
+              <th>No. Bookings</th>
+            </tr>
+          </thead>
+          <tbody id="bookings-table-body"><!--- Javascript ---></tbody>
+        </table>
+        </div>
 
-        </tbody>
-      </table>
+        <div class="new-movie-section">
+        <h2>Add a new movie</h2>
+        <form id="add-movie-form">
+          <div class="input-group">
+            <label for="add-movie-name"></label>
+            <input id="add-movie-name" class="add-movie-input" type="text" name="add-movie-name" placeholder="Movie Name">
+            <label for="add-movie-price"></label>
+            <input id="add-movie-price" class="add-movie-input" type="number" name="add-movie-price" placeholder="Price (£)">
+          </div>
+          <button id="add-movie-btn" type="submit">Add Movie</button>
+        </form>
+        </div>
+      </div>
     </section>
 
-
     <section class="bookings-frontend">
-      <div class="movie-selection-container"> <!-- JavaScript --> </div>
-      <div id="seats-container"> <!-- JavaScript --> </div>
-      <button id="bookBtn">Book Seats</button>
+      <div class="seats-section">
+        <div class="movie-selection-container"> <!-- JavaScript --> </div>
+        <div id="seats-container"> <!-- JavaScript --> </div>
+        <button id="bookBtn">Book Seats</button>
+      </div>
     </section>
 
   </div>
