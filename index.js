@@ -1,9 +1,9 @@
-import { filterSeatsObjArr } from './modulesSeats/filterSeats.js';
-import './modulesMovies/moviesDropdown.js';
-import './modulesSeats/bookSeats.js';
+import { filterSeatsObjArr } from './modules/Seats/filterSeats.js';
+import './modules/Seats/bookSeats.js';
 import './modules/Backend/bookingsTable.js';
-import './modulesMovies/addMovie.js';
-import { addMovieBtn } from './modulesMovies/addMovie.js';
+import './modules/Movies/moviesDropdown.js';
+import './modules/Movies/addMovie.js';
+import { addMovieBtn } from './modules/Movies/addMovie.js';
 
 export const seatsContainer = document.getElementById('seats-container');
 export const seats = seatsContainer.children;
@@ -14,14 +14,13 @@ const loadSeats = () => {
   const selectedMovieValue = movieSelectionDropdown.value;
 
   // Get booked seats from local storage
-  const bookedSeatsArr = JSON.parse(localStorage.getItem(`bookedSeats-${selectedMovieValue}`));
+  const bookedSeatsArr = JSON.parse(localStorage.getItem(`bookedSeats-${selectedMovieValue}`)) || [];
 
   // Remove previoulsy selected movie seats when a new movie is selected
   seatsContainer.innerHTML = '';
 
   // Filter seat objects by the movie that has been selected and then loop through them
   filterSeatsObjArr().forEach((seat, index) => {
-
     // For each seat object create a div and add relevant classes
     const seatDiv = document.createElement('div');
     seatDiv.classList.add('seat');

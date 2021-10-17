@@ -1,4 +1,4 @@
-import { movies } from './moviesGenerator.js';
+import { getMovies } from './getMovies.js';
 import { addMovieBtn } from './addMovie.js';
 
 const movieSelectionContainer = document.querySelector('.movie-selection-container');
@@ -15,7 +15,7 @@ const updateMoviesSelector = () => {
 
   movieSelect.innerHTML = ""
 
-  movies.forEach(movie => {
+  getMovies().forEach(movie => {
     let option = document.createElement('option')
     option.setAttribute('value', `${movie.title}`)
     option.innerHTML = `${movie.title}`;

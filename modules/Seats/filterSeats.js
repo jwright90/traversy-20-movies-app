@@ -1,5 +1,5 @@
 import { seatsObjArr } from "./seatsGenerator.js";
-import { movieSelectionDropdown } from "../index.js";
+import { movieSelectionDropdown } from "../../index.js";
 
 const filterSeatsObjArr = (movie) => {
   movie = movieSelectionDropdown.value;

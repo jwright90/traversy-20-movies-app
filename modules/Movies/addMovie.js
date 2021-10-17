@@ -1,6 +1,8 @@
-import { Movie, movies } from './moviesGenerator.js';
-import { updateBookingsTable } from '../modules/Backend/bookingsTable.js';
-import { generateSeats } from '../modulesSeats/seatsGenerator.js';
+import { Movie } from './moviesGenerator.js';
+import { updateBookingsTable } from '../Backend/bookingsTable.js';
+import { generateSeats } from '../Seats/seatsGenerator.js';
+
+let moviesLS = JSON.parse(localStorage.getItem('movies')) || JSON.parse(localStorage.getItem("initial-movies"))
 
 export const addMovieBtn = document.getElementById('add-movie-btn');
 const addMovieName = document.getElementById('add-movie-name');
@@ -16,13 +18,13 @@ const getTableTitles = () => {
 addMovieBtn.addEventListener('click', async e => {
 
   e.preventDefault()
-  await getTableTitles();
+  getTableTitles();
 
   if (getTableTitles().indexOf(addMovieName.value.toLowerCase()) > -1) {
     console.log('This movie already exists...')
   }
   else if (addMovieName.value !== '' && addMoviePrice.value !== '') {
-    addMovie(addMovieName.value, addMoviePrice.value)
+    await addMovie(addMovieName.value, addMoviePrice.value)
     updateBookingsTable()
   } else {
     console.log('Enter something...')
@@ -30,8 +32,10 @@ addMovieBtn.addEventListener('click', async e => {
 })
 
 export const addMovie = async (title, price) => {
-  movies.push(new Movie(title, price));
-  await movies.sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase()) ? 1 : -1)
+  let newMovie = new Movie(title, price)
+  moviesLS.push(newMovie);
+  await moviesLS.sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase()) ? 1 : -1)
+  localStorage.setItem("movies", JSON.stringify(moviesLS));
   generateSeats()
 }
 

@@ -1,5 +1,5 @@
-import { movies } from "../modulesMovies/moviesGenerator.js";
-  
+import { getMovies } from '../Movies/getMovies.js'
+
 class Seat {
   constructor(row, col, booked, movie) {
     this.row = row;
@@ -17,10 +17,10 @@ let seatsObjArr = [];
 export const generateSeats = () => {
   seatsObjArr = [];
 
-  for (let h = 0; h < movies.length; h++) {
+  for (let h = 0; h < getMovies().length; h++) {
     for (let i = 0; i < 6; i++) {
       for (let j = 0; j < 8; j++) {
-        seatsObjArr.push(new Seat(i, j, false, movies[h].title.replace(" ", "-")));
+        seatsObjArr.push(new Seat(i, j, false, getMovies()[h].title.replace(" ", "-")));
       }
     }
   }

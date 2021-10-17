@@ -1,4 +1,4 @@
-import { movies } from '../../modulesMovies/moviesGenerator.js'
+import { getMovies } from "../Movies/getMovies.js";
 
 const bookingsTableBody = document.getElementById('bookings-table-body')
 
@@ -7,7 +7,7 @@ export const updateBookingsTable = () => {
   // Remove previous bookings data when there is an update
   bookingsTableBody.innerHTML = "";
 
-  movies.forEach((movie) => {
+  getMovies().forEach((movie) => {
     const bookings = JSON.parse(localStorage.getItem(`bookedSeats-${movie.title}`))
     
     bookingsTableBody.innerHTML += `<tr>
@@ -16,7 +16,6 @@ export const updateBookingsTable = () => {
                                       <td>${bookings !== null ? bookings.length : 0} / 48</td>
                                     </tr>`
   })
-
 
   /*
   movies.forEach((movie) => {

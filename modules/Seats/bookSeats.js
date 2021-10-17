@@ -1,6 +1,6 @@
-import { loadSeats, seats } from "../index.js";
+import { loadSeats, seats } from "../../index.js";
 import { updateBookedSeats } from './updateBookedSeats.js'
-import { updateBookingsTable } from "../modules/Backend/bookingsTable.js";
+import { updateBookingsTable } from "../Backend/bookingsTable.js";
 
 const bookBtn = document.getElementById('bookBtn');
 
