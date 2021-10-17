@@ -33,7 +33,7 @@
         </div>
 
         <div class="new-movie-section">
-        <h2>Add a new movie</h2>
+        <h2>Add New Movie</h2>
         <form id="add-movie-form">
           <div class="input-group">
             <label for="add-movie-name"></label>
@@ -53,16 +53,31 @@
 
     <section class="bookings-frontend">
       <div class="seats-section">
-        <div class="movie-selection-container"> <!-- JavaScript --> </div>
+        <h2>Book Movie Seats</h2>
+        <div class="movie-selection-container">
+
+        </div>
         <div id="seats-container"> <!-- JavaScript --> </div>
+          <ul class="seat-key">
+            <li>Occupied <div class="seat booked"></div>
+            </li>
+            <li>Selected <div class="seat selected"></div>
+            </li>
+            <li>Unoccupied <div class="seat"></div>
+            </li>
+          </ul>
         <button id="bookBtn">Book Seats</button>
       </div>
     </section>
+  </div>
+
+  <div id="moviePicContainer">
 
   </div>
   
   <script type="module" src="./modules/Movies/deleteMovie.js"></script>
   <script type="module" src="./modules/Seats/selectSeats.js"></script>
   <script type="module" src="index.js"></script>
+  <script type="module" src="./modules/Movies/moviesAPI.js"></script>
 </body>
 </html>

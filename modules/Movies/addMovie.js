@@ -2,6 +2,7 @@ import { Movie, movies } from './moviesGenerator.js';
 import { updateBookingsTable } from '../Backend/bookingsTable.js';
 import { generateSeats } from '../Seats/seatsGenerator.js';
 
+
 const moviesLS = JSON.parse(localStorage.getItem('movies')) || JSON.parse(localStorage.getItem("initial-movies"))
 
 export const addMovieBtn = document.getElementById('add-movie-btn');
@@ -32,11 +33,12 @@ addMovieBtn.addEventListener('click', async e => {
 })
 
 export const addMovie = async (title, price) => {
-  let updatedMovies = JSON.parse(localStorage.getItem('movies'))
+  let updatedMovies = JSON.parse(localStorage.getItem('movies')) || JSON.parse(localStorage.getItem('initial-movies'))
   let newMovie = new Movie(title, price)
   updatedMovies.push(newMovie)
   await updatedMovies.sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase()) ? 1 : -1)
   localStorage.setItem('movies', JSON.stringify(updatedMovies));
   generateSeats()
+
 }
 

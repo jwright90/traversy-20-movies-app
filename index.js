@@ -4,6 +4,7 @@ import './modules/Backend/bookingsTable.js';
 import './modules/Movies/moviesDropdown.js';
 import './modules/Movies/addMovie.js';
 import { addMovieBtn } from './modules/Movies/addMovie.js';
+import { getMoviesAPI, SEARCH_API } from './modules/Movies/moviesAPI.js';
 
 export const seatsContainer = document.getElementById('seats-container');
 export const seats = seatsContainer.children;
@@ -47,5 +48,8 @@ loadSeats();
 
 export { loadSeats }
 
-movieSelectionDropdown.addEventListener('change', loadSeats)
+movieSelectionDropdown.addEventListener('change', (e) => {
+  getMoviesAPI(SEARCH_API + e.target.value)
+  loadSeats()
+})
 addMovieBtn.addEventListener('click', loadSeats)

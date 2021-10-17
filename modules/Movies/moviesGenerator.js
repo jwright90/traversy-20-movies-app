@@ -1,6 +1,6 @@
 export class Movie {
   constructor(title, price) {
-    this.title = title.replace(" ","-");
+    this.title = title.split(" ").join("-");
     this.price = price;
   }
 }

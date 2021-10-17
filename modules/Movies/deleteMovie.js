@@ -1,5 +1,12 @@
 import { updateBookingsTable } from "../Backend/bookingsTable.js"
+import { updateMoviesSelector } from "./moviesDropdown.js"
+import { updateBookedSeats } from "../Seats/updateBookedSeats.js"
+import { loadSeats } from "../../index.js"
 
+
+
+const movies = JSON.parse(localStorage.getItem('movies'))
+console.log(movies)
 const table = document.getElementById('bookings-table')
 
 const deleteMovie = (movies, movieToDeleteTitle) => {
@@ -13,10 +20,12 @@ table.addEventListener('click', e => {
     let moviesLS = JSON.parse(localStorage.getItem('movies'))
     const movieToDeleteTitle = e.target.parentNode.parentNode.firstElementChild.innerText.toLowerCase()
     updatedMovies = deleteMovie(moviesLS, movieToDeleteTitle)
-    console.log('update: ', updatedMovies)
-
     localStorage.setItem('movies', JSON.stringify(updatedMovies))
   }
 
   updateBookingsTable();
+  updateBookedSeats();
+  updateMoviesSelector();
+  loadSeats();
+
 })
