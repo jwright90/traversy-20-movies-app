@@ -9,11 +9,14 @@ export const updateBookingsTable = () => {
 
   getMovies().forEach((movie) => {
     const bookings = JSON.parse(localStorage.getItem(`bookedSeats-${movie.title}`))
-    
+    const bookingsLength = bookings !== null ? bookings.length : 0
+
     bookingsTableBody.innerHTML += `<tr>
                                       <td>${movie.title}</td>
-                                      <td>${movie.price}</td>
-                                      <td>${bookings !== null ? bookings.length : 0} / 48</td>
+                                      <td class="align-right">${parseFloat(movie.price).toFixed(2)}</td>
+                                      <td class="align-right">${bookingsLength} / 48</td>
+                                      <td class="align-right">${(parseFloat(movie.price) * parseFloat(bookingsLength)).toFixed(2) }</td>
+                                      <td><i class="fa fa-trash" aria-hidden="true"></i></td>
                                     </tr>`
   })
 
