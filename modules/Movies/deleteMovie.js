@@ -2,7 +2,7 @@ import { updateBookingsTable } from "../Backend/bookingsTable.js"
 import { updateMoviesSelector } from "./moviesDropdown.js"
 import { updateBookedSeats } from "../Seats/updateBookedSeats.js"
 import { loadSeats } from "../../index.js"
-
+import { getMoviesAPI, SEARCH_API } from './moviesAPI.js';
 
 
 const movies = JSON.parse(localStorage.getItem('movies'))
@@ -27,5 +27,5 @@ table.addEventListener('click', e => {
   updateBookedSeats();
   updateMoviesSelector();
   loadSeats();
-
+  getMoviesAPI(SEARCH_API + updatedMovies[0].title)
 })

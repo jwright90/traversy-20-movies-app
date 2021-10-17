@@ -1,9 +1,7 @@
 import { Movie, movies } from './moviesGenerator.js';
 import { updateBookingsTable } from '../Backend/bookingsTable.js';
 import { generateSeats } from '../Seats/seatsGenerator.js';
-
-
-const moviesLS = JSON.parse(localStorage.getItem('movies')) || JSON.parse(localStorage.getItem("initial-movies"))
+import { getMoviesAPI, SEARCH_API } from './moviesAPI.js';
 
 export const addMovieBtn = document.getElementById('add-movie-btn');
 const addMovieName = document.getElementById('add-movie-name');
@@ -39,6 +37,6 @@ export const addMovie = async (title, price) => {
   await updatedMovies.sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase()) ? 1 : -1)
   localStorage.setItem('movies', JSON.stringify(updatedMovies));
   generateSeats()
-
+  getMoviesAPI(SEARCH_API+updatedMovies[0].title)
 }
 

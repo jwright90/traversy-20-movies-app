@@ -21,9 +21,11 @@
 
 ::selection {
 	background: var(--highlight); /* WebKit/Blink Browsers */
+	color: #fff;
 }
 ::-moz-selection {
 	background: var(--highlight); /* Gecko Browsers */
+	color: #fff;
 }
 
 * {
