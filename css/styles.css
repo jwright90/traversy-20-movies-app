@@ -114,6 +114,11 @@ select {
 	min-width: 120px;
 	padding: 2px 6px;
 	border-radius: 5px;
+	border: 0;
+}
+
+select:focus {
+	outline: 4px solid #00a8e8;
 }
 
 #bookBtn {
@@ -172,14 +177,17 @@ even after the seat has been booked */
 
 ul.seat-key {
 	padding-left: 0;
+	font-size: 15px;
 }
 
 .seat-key li {
 	margin-right: 10px;
 	display: flex;
+	align-items: center;
 }
 
 .seat-key li .seat {
-	margin-left: 10px;
+	margin-left: 5px;
+	margin-right: 12px;
 	transform: scale(0.67);
 }
