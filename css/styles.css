@@ -1,4 +1,8 @@
 @import url('./bookings-backend.css');
+@import url('./hero-section.css');
+@import url('./navbar.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
 
 :root {
 	/* Colors */
@@ -16,7 +20,7 @@
 	--grid-seat-end-width: calc(var(--grid-seat-width) * 1.8);
 
 	/* Positioning */
-	--bottom-margin: 20%;
+	--bottom-margin: 15%;
 }
 
 ::selection {
@@ -36,16 +40,29 @@ body,
 html {
 	margin: 0;
 	padding: 0;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: 'Zen Kaku Gothic New', 'Segoe UI', Tahoma, Geneva, Verdana,
+		sans-serif;
+	color: white;
+}
+
+h1 {
+	font-size: 58px;
 }
 
 h2 {
 	font-size: 32px;
 }
 
+h4 {
+	font-size: 28px;
+	margin-bottom: 5px;
+}
+
 button {
 	box-shadow: 0 5px #e3e3e3;
 	cursor: pointer;
+	font-family: 'Zen Kaku Gothic New', 'Segoe UI', Tahoma, Geneva, Verdana,
+		sans-serif;
 }
 
 button:active {
@@ -63,6 +80,8 @@ input:focus {
 
 input {
 	border: none;
+	font-family: 'Zen Kaku Gothic New', 'Segoe UI', Tahoma, Geneva, Verdana,
+		sans-serif;
 }
 
 .bookings-container {
@@ -77,6 +96,7 @@ input {
 }
 
 .bookings-frontend {
+	min-height: 100vh;
 	position: absolute;
 	left: 50%;
 	display: flex;
@@ -85,7 +105,6 @@ input {
 	align-items: center;
 	background-color: var(--dark-blue);
 	color: #fff;
-	min-height: 100vh;
 	width: 50%;
 	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
 	background-size: cover;
@@ -115,6 +134,8 @@ select {
 	padding: 2px 6px;
 	border-radius: 5px;
 	border: 0;
+	font-family: 'Zen Kaku Gothic New', 'Segoe UI', Tahoma, Geneva, Verdana,
+		sans-serif;
 }
 
 select:focus {
