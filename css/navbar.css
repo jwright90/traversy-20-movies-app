@@ -35,6 +35,14 @@
 	height: 100%;
 }
 
-#navbar ul li a:hover {
+#navbar ul li:hover {
 	background-color: var(--dark-blue);
+}
+
+#navbar ul li:first-child:hover {
+	background-color: var(--dark-blue-80);
+}
+
+#navbar ul li i {
+	color: white;
 }

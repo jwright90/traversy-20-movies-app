@@ -21,11 +21,11 @@ table.addEventListener('click', e => {
     const movieToDeleteTitle = e.target.parentNode.parentNode.firstElementChild.innerText.toLowerCase()
     updatedMovies = deleteMovie(moviesLS, movieToDeleteTitle)
     localStorage.setItem('movies', JSON.stringify(updatedMovies))
-  }
 
-  updateBookingsTable();
-  updateBookedSeats();
-  updateMoviesSelector();
-  loadSeats();
-  getMoviesAPI(SEARCH_API + updatedMovies[0].title)
+    updateBookingsTable();
+    updateBookedSeats();
+    updateMoviesSelector();
+    loadSeats();
+    getMoviesAPI(SEARCH_API + updatedMovies[0].title)
+  }
 })
