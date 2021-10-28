@@ -29,6 +29,4 @@ export const updateMoviesSelector = () => {
 
 updateMoviesSelector()
 
-addMovieBtn.addEventListener('click', updateMoviesSelector)
-
 export { movieSelect }

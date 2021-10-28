@@ -3,6 +3,7 @@ import { Movie } from './moviesGenerator.js';
 import { updateBookingsTable } from '../Backend/bookingsTable.js';
 import { generateSeats } from '../Seats/seatsGenerator.js';
 import { getMoviesAPI, SEARCH_API } from './moviesAPI.js';
+import { updateMoviesSelector } from "./moviesDropdown.js";
 
 export const addMovieBtn = document.getElementById('add-movie-btn');
 const addMovieName = document.getElementById('add-movie-name');
@@ -26,6 +27,7 @@ addMovieBtn.addEventListener('click', async e => {
   else if (addMovieName.value !== '' && addMoviePrice.value !== '') {
     await addMovie(addMovieName.value, addMoviePrice.value)
     updateBookingsTable()
+    updateMoviesSelector()
   } else {
     console.log('Enter something...')
   }
