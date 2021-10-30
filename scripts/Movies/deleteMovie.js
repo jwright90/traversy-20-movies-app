@@ -1,7 +1,7 @@
 import { updateBookingsTable } from "../Backend/bookingsTable.js"
 import { updateMoviesSelector } from "./moviesDropdown.js"
 import { updateBookedSeats } from "../Seats/updateBookedSeats.js"
-import { loadSeats } from "../../index.js"
+import { loadSeats } from "../index.js"
 import { getMoviesAPI, SEARCH_API } from './moviesAPI.js';
 
 

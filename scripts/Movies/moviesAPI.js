@@ -1,7 +1,7 @@
-
+import API_KEY from '../env.js';
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
-const API_URL = `https://api.themoviedb.org/4/discover/movie?sort_by=popularity.desc&api_key=${API_KEY || process.env.API_KEY}&page=1`
-export const SEARCH_API = `https://api.themoviedb.org/4/search/movie?api_key=${API_KEY || process.env.API_KEY}&query="`
+const API_URL = `https://api.themoviedb.org/4/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}&page=1`
+export const SEARCH_API = `https://api.themoviedb.org/4/search/movie?api_key=${API_KEY}&query="`
 
 const movies = JSON.parse(localStorage.getItem('movies')) || JSON.parse(localStorage.getItem('initial-movies'))
 const background = document.querySelector('.bookings-frontend')

@@ -1,4 +1,4 @@
-import { loadSeats, seats } from "../../index.js";
+import { loadSeats, seats } from "../index.js";
 import { updateBookedSeats } from './updateBookedSeats.js'
 import { updateBookingsTable } from "../Backend/bookingsTable.js";
 

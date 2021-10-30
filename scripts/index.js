@@ -1,10 +1,10 @@
-import { filterSeatsObjArr } from './modules/Seats/filterSeats.js';
-import './modules/Seats/bookSeats.js';
-import './modules/Backend/bookingsTable.js';
-import './modules/Movies/moviesDropdown.js';
-import './modules/Movies/addMovie.js';
-import { addMovieBtn } from './modules/Movies/addMovie.js';
-import { getMoviesAPI, SEARCH_API } from './modules/Movies/moviesAPI.js';
+import { filterSeatsObjArr } from './Seats/filterSeats.js';
+import './Seats/bookSeats.js';
+import './Backend/bookingsTable.js';
+import './Movies/moviesDropdown.js';
+import './Movies/addMovie.js';
+import { addMovieBtn } from './Movies/addMovie.js';
+import { getMoviesAPI, SEARCH_API } from './Movies/moviesAPI.js';
 
 export const seatsContainer = document.getElementById('seats-container');
 export const seats = seatsContainer.children;
