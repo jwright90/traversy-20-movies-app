@@ -3,6 +3,14 @@
 My take on Brad Traversy's movies app on Udemy \
 https://www.udemy.com/course/web-projects-with-vanilla-javascript/
 
+## What did I enjoy about building this project?
+
+- Combining different concepts I've learned from many small tutorials into one project
+
+## What did I find the most challenging?
+
+- Organising my code. It became really tough to understand how each bit of code related to parts of the code, even when I tried to split all the files out into easier to understand blocks, it was still difficult.
+
 ## What did I learn?
 
 - Ensuring callbacks are fired at the right time, e.g. not resetting dropdown list if add movie button is clicked and no movie has been entered.
