@@ -4,7 +4,7 @@ import { movieSelectionDropdown, seats } from "../index.js";
 const updateBookedSeats = () => {
     const bookedSeats = Array.from(document.querySelectorAll('.seat.booked'));
     const seatsIndex = [...bookedSeats].map(seat => (
-      [...seats].indexOf(seat)
+      [...seats].indexOf(seat) 
     ));
     
     const movieIndex = movieSelectionDropdown.selectedIndex;

@@ -9,7 +9,7 @@ export const updateBookingsTable = () => {
 
   getMovies().forEach((movie) => {
     const bookings = JSON.parse(localStorage.getItem(`bookedSeats-${movie.title}`))
-    const bookingsLength = bookings !== null ? bookings.length : 0
+    const bookingsLength = bookings !== null ? bookings.length - 1 : 0
 
     bookingsTableBody.innerHTML += `<tr>
                                       <td>${movie.title}</td>
