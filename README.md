@@ -20,6 +20,7 @@ https://www.udemy.com/course/web-projects-with-vanilla-javascript/
 ## What would I do differently next time?
 
 - Continuous deployment, because it wasn't until the end of the project I realised I couldn't use .env in a regular Javascript project. Getting the API to work gave me issues, amongst other bugs I found only after deployment.
+- If this were a real life project for a client I would of course use frameworks, probably React / Next.js as that's what I'm the most comfortable with at the moment. I would also use a database instead of local storage.
 
 ## What should I learn next?
 
