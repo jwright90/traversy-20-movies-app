@@ -17,10 +17,15 @@
 <body>
   <nav id="navbar">
     <ul>
-      <li><a href='#'><i class="fas fa-2x fa-video"></i></a></li>
-      <li><a href='#'>Home</a></li>
-      <li><a href='#'>App</a></li>
-      <li><a href='#'>Contact</a></li>
+      <li class="icon"><a href='#'><i class="fas fa-2x fa-video"></i></a></li>
+    </ul>
+    <ul>
+      <li><a href='#hero-section'>Home</a></li>
+      <li><a href='#bookings-section'>App</a></li>
+      <li><a href='#contact-section'>Contact</a></li>
+    </ul>
+    <ul>
+      <li><a href='https://github.com/jwright90/traversy-20-movies-app' target="_blank"><i class="fab fa-2x fa-github"></i></a></li>
     </ul>
   </nav>
 
@@ -40,10 +45,9 @@
 
       <button class="hero-btn">View the App</button>
     </div>
-
   </section>
 
-  <div class="bookings-container">
+  <section class="bookings-container" id="bookings-section">
     <section class="bookings-backend">
       <div class="bookings-backend-container">
         <div class="bookings-info">
@@ -99,11 +103,23 @@
         <button id="bookBtn">Book Seats</button>
       </div>
     </section>
-  </div>
+  </section>
 
-  <div id="moviePicContainer">
+  <section id="contact-section">
+    <div class="contact-form">
+      <h2>Contact Me</h2>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" />
+        <label for="message">Message: </label>
+        <textarea name="message" id="message" placeholder="Enter your message"></textarea>
+        <input type="submit" class="button" value="Send">
+      </form>
+    </div>
+    <div class="popcorn-img">
 
-  </div>
+    </div>
+  </section>
   
   <script type="module" src="./modules/Movies/deleteMovie.js"></script>
   <script type="module" src="./modules/Seats/selectSeats.js"></script>

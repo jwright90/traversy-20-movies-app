@@ -3,7 +3,7 @@
 }
 
 .bookings-backend {
-	min-height: 100vh;
+	min-height: calc(100vh + 80px);
 	background-color: #333547;
 	color: #fff;
 	width: 50%;

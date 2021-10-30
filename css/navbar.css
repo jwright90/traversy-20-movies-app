@@ -1,19 +1,39 @@
 #navbar {
 	background-color: var(--dark-blue-80);
 	height: 80px;
-	width: 100%;
+	width: 100vw;
 	margin: 0;
 	padding: 0;
 	position: fixed;
 	z-index: 3;
 	border-bottom: 2px solid #fff;
+	display: flex;
+	align-items: center;
+}
+
+#navbar ul:first-of-type {
+	position: absolute;
+	top: -20px;
+}
+
+#navbar ul:first-of-type:hover li a,
+#navbar ul:first-of-type:hover li i {
+	cursor: default;
+}
+
+#navbar ul:last-of-type {
+	position: absolute;
+	right: 60px;
+}
+
+#navbar ul:not(:first-of-type) {
+	margin: auto;
 }
 
 #navbar ul {
-	margin: 0 auto;
 	height: 100%;
 	display: flex;
-	justify-content: baseline;
+	justify-content: center;
 	align-items: center;
 	text-align: center;
 }
@@ -39,7 +59,7 @@
 	background-color: var(--dark-blue);
 }
 
-#navbar ul li:first-child:hover {
+#navbar ul:first-of-type li:first-child:hover {
 	background-color: var(--dark-blue-80);
 }
 
