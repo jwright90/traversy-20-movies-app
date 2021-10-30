@@ -61,7 +61,8 @@ h4 {
 }
 
 button,
-input.button {
+input.button,
+a.hero-btn {
 	box-shadow: 0 5px #e3e3e3;
 	cursor: pointer;
 	font-family: 'Zen Kaku Gothic New', 'Segoe UI', Tahoma, Geneva, Verdana,
@@ -69,7 +70,8 @@ input.button {
 }
 
 button:active,
-input.button:active {
+input.button:active,
+a.hero-btn:active {
 	transform: translateY(2px);
 	box-shadow: 0 2px #e3e3e3;
 }
